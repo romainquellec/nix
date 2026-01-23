@@ -32,9 +32,14 @@
     enable = true;
     enableCompletion = true;
     syntaxHighlighting.enable = true;
+    history = {
+      size = 10000;
+      path = "${config.home.homeDirectory}/.zsh_history";
+      save = 10000;
+    };
     shellAliases = {
-      update = "nix flake update";
-      rebuild = "sudo nixos-rebuild switch --flake ~/nixos-config#PCFix-nixos";
+      update = "nix flake update --flake /home/tks/nixos-config && sudo nixos-rebuild switch --flake /home/tks/nixos-config#PCFix-nixos";
+      rebuild = "sudo nixos-rebuild switch --flake /home/tks/nixos-config#PCFix-nixos";
       clean = "sudo nix-collect-garbage -d && nix-store --optimise";
     };
   };
