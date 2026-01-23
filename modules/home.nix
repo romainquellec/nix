@@ -30,6 +30,8 @@
 
   programs.zsh = {
     enable = true;
+    enableCompletion = true;
+    syntaxHighlighting.enable = true;
     shellAliases = {
       update = "nix flake update";
       rebuild = "sudo nixos-rebuild switch --flake ~/nixos-config#PCFix-nixos";
@@ -87,8 +89,11 @@
       gpg.format = "ssh";
       init.defaultBranch = "main";
       push.autoSetupRemote = true;
+      pull.rebase = true;
     };
   };
+
+  services.ssh-agent.enable = true;
 
   programs.home-manager.enable = true;
 }
