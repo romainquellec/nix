@@ -26,6 +26,8 @@
     portfolio
     calibre
     vlc
+    claude-code
+    opencode
   ];
 
   programs.zsh = {
@@ -65,27 +67,28 @@
     };
   };
 
-  programs.git = {
+programs.git = {
     enable = true;
-    userName = "romainquellec";
-    userEmail = "1150703+romainquellec@users.noreply.github.com";
+    
+    settings = {
+      user = {
+        name = "romainquellec";
+        email = "1150703+romainquellec@users.noreply.github.com";
+      };
 
-    signing = {
-      key = "~/.ssh/gh.pub";
-      signByDefault = true;
-    };
-  
-    extraConfig = {
       gpg.format = "ssh";
+      user.signingkey = "~/.ssh/gh.pub";
+      commit.gpgsign = true;
+
       init.defaultBranch = "main";
       push.autoSetupRemote = true;
       pull.rebase = true;
-    };
 
-    aliases = {
-      st = "status";
-      co = "checkout";
-      br = "branch";
+      alias = {
+        st = "status";
+        co = "checkout";
+        br = "branch";
+      };
     };
   };
 

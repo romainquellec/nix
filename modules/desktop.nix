@@ -3,14 +3,14 @@
 {
   services.xserver = {
     enable = true;
-    displayManager.gdm.enable = true;
-    desktopManager.gnome.enable = true;
-    
     xkb = {
       layout = "us";
       variant = "intl";
     };
   };
+
+  services.displayManager.gdm.enable = true;
+  services.desktopManager.gnome.enable = true;
 
   security.rtkit.enable = true;
   services.pipewire = {
@@ -23,9 +23,11 @@
   services.printing.enable = true;
 
   fonts.packages = with pkgs; [
-    (nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
+    nerd-fonts.jetbrains-mono
     noto-fonts
+    noto-fonts-cjk-sans
+    noto-fonts-color-emoji
   ];
 
-  console.keyMap = "us-acentos"; 
+  console.keyMap = "us-acentos";
 }
