@@ -62,5 +62,33 @@
     };
   };
 
+  programs.ssh = {
+    enable = true;
+    matchBlocks = {
+      "github.com" = {
+        hostname = "github.com";
+        identityFile = "~/.ssh/gh";
+        user = "git";
+      };
+    };
+  };
+
+  pprograms.git = {
+    enable = true;
+    userName = "romainquellec";
+    userEmail = "1150703+romainquellec@users.noreply.github.com";
+
+    signing = {
+      key = "~/.ssh/gh.pub";
+      signByDefault = true;
+    };
+  
+    extraConfig = {
+      gpg.format = "ssh";
+      init.defaultBranch = "main";
+      push.autoSetupRemote = true;
+    };
+  };
+
   programs.home-manager.enable = true;
 }
