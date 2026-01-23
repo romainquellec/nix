@@ -38,24 +38,9 @@
       save = 10000;
     };
     shellAliases = {
-      update = "nix flake update --flake /home/tks/nixos-config && sudo nixos-rebuild switch --flake /home/tks/nixos-config#PCFix-nixos";
+      update = "nix flake update --flake /home/tks/nixos-config";
       rebuild = "sudo nixos-rebuild switch --flake /home/tks/nixos-config#PCFix-nixos";
       clean = "sudo nix-collect-garbage -d && nix-store --optimise";
-    };
-  };
-
-  programs.git = {
-    enable = true;
-    
-    extraConfig = {
-      init.defaultBranch = "main";
-      pull.rebase = true;
-    };
-    
-    aliases = {
-      st = "status";
-      co = "checkout";
-      br = "branch";
     };
   };
 
@@ -80,7 +65,7 @@
     };
   };
 
-  pprograms.git = {
+  programs.git = {
     enable = true;
     userName = "romainquellec";
     userEmail = "1150703+romainquellec@users.noreply.github.com";
@@ -95,6 +80,12 @@
       init.defaultBranch = "main";
       push.autoSetupRemote = true;
       pull.rebase = true;
+    };
+
+    aliases = {
+      st = "status";
+      co = "checkout";
+      br = "branch";
     };
   };
 

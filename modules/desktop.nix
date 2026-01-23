@@ -23,10 +23,8 @@
   services.printing.enable = true;
 
   fonts.packages = with pkgs; [
-    nerd-fonts.jetbrains-mono
+    (nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
     noto-fonts
-    noto-fonts-cjk
-    noto-fonts-emoji
   ];
 
   console.keyMap = "us-acentos"; 

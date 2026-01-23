@@ -19,9 +19,13 @@
         
         home-manager.nixosModules.home-manager
         {
-          home-manager.useGlobalPkgs = true;
-          home-manager.useUserPackages = true;
-          home-manager.users.tks = import ./modules/home.nix;
+          home-manager = {
+            useGlobalPkgs = true;
+            useUserPackages = true;
+            backupFileExtension = "backup";
+            
+            users.tks = import ./modules/home.nix;
+          };
         }
       ];
     };
