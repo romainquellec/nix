@@ -6,28 +6,30 @@
   home.stateVersion = "24.11";
 
   home.packages = with pkgs; [
-    vscode
-    github-desktop
-    lazygit
-    ghostty
-    nnn
+    brave
+    calibre
+    claude-code
+    chromium
+    discord
+    discord
     firefox
     firefox-devedition-unwrapped
-    chromium
+    ghostty
+    github-desktop
     google-chrome
-    vivaldi
-    librewolf
-    brave
-    discord
-    slack
-    obsidian
-    libreoffice
     homebank
-    portfolio
-    calibre
-    vlc
-    claude-code
+    lazygit
+    lazysql
+    librewolf
+    libreoffice
+    nnn
+    obsidian
     opencode
+    portfolio
+    slack
+    vlc
+    vscode
+    vivaldi
   ];
 
   programs.zsh = {
@@ -50,7 +52,7 @@
     enable = true;
     enableZshIntegration = true;
     settings = {
-      theme = "dark";
+      theme = "Catppuccin Mocha";
       font-family = "JetBrainsMono Nerd Font";
       font-size = 12;
     };
@@ -58,6 +60,7 @@
 
   programs.ssh = {
     enable = true;
+    enableDefaultConfig = false;
     matchBlocks = {
       "github.com" = {
         hostname = "github.com";

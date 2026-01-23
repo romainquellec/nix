@@ -30,4 +30,15 @@
   ];
 
   console.keyMap = "us-acentos";
+
+  services.flatpak = {
+    enable = true;
+    remotes = [{
+      name = "flathub";
+      location = "https://dl.flathub.org/repo/flathub.flatpakrepo";
+    }];
+    packages = [
+      "com.opera.Opera"
+    ];
+  };
 }
