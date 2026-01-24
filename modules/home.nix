@@ -11,7 +11,6 @@
     claude-code
     chromium
     discord
-    discord
     firefox
     firefox-devedition-unwrapped
     ghostty
