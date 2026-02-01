@@ -23,7 +23,6 @@
     libreoffice
     logseq
     nnn
-    obsidian
     opencode
     portfolio
     slack
