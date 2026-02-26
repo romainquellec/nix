@@ -6,6 +6,7 @@
   home.stateVersion = "24.11";
 
   home.packages = with pkgs; [
+    android-tools
     brave
     calibre
     claude-code
@@ -25,6 +26,7 @@
     nnn
     opencode
     portfolio
+    scrcpy
     slack
     vlc
     vscode
