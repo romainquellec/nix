@@ -20,9 +20,7 @@
     homebank
     lazygit
     lazysql
-    librewolf
     libreoffice
-    logseq
     nnn
     obsidian
     opencode
