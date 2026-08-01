@@ -6,6 +6,9 @@
 
   networking.hostName = "PCFix-nixos";
   networking.networkmanager.enable = true;
+  networking.extraHosts = ''
+    192.168.0.42 newsblur.local
+  '';
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
   nixpkgs.config.allowUnfree = true;
