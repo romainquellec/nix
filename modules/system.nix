@@ -8,6 +8,7 @@
   networking.networkmanager.enable = true;
   networking.extraHosts = ''
     192.168.0.42 newsblur.local
+    127.0.0.1 cloud.typography.com
   '';
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
@@ -26,6 +27,9 @@
     LC_TELEPHONE = "fr_FR.UTF-8";
     LC_TIME = "fr_FR.UTF-8";
   };
+
+  hardware.enableRedistributableFirmware = true;
+  hardware.bluetooth.enable = true;
 
   programs.zsh.enable = true;
 
