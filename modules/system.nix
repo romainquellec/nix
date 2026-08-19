@@ -42,9 +42,6 @@
     eza
     bat
     fd
-    fzf
-    zoxide
-    atuin
     tmux
   ];
 

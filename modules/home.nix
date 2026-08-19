@@ -46,6 +46,36 @@
       rebuild = "sudo nixos-rebuild switch --flake /home/tks/nixos-config#PCFix-nixos";
       clean = "sudo nix-collect-garbage -d && nix-store --optimise";
     };
+    plugins = [
+      {
+        name = "zsh-autosuggestions";
+        src = pkgs.zsh-autosuggestions;
+        file = "share/zsh-autosuggestions/zsh-autosuggestions.zsh";
+      }
+    ];
+    initExtraBeforeCompInit = ''
+      fpath+="${pkgs.zsh-completions}/share/zsh/site-functions"
+    '';
+  };
+
+  programs.starship = {
+    enable = true;
+    enableZshIntegration = true;
+  };
+
+  programs.fzf = {
+    enable = true;
+    enableZshIntegration = true;
+  };
+
+  programs.zoxide = {
+    enable = true;
+    enableZshIntegration = true;
+  };
+
+  programs.atuin = {
+    enable = true;
+    enableZshIntegration = true;
   };
 
   programs.ghostty = {
