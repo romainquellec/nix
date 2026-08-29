@@ -6,6 +6,12 @@
 
   networking.hostName = "PCFix-nixos";
   networking.networkmanager.enable = true;
+
+  services.avahi = {
+    enable = true;
+    nssmdns4 = true;
+  };
+  
   networking.extraHosts = ''
     192.168.0.42 newsblur.local
     127.0.0.1 cloud.typography.com
