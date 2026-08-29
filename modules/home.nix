@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, pkgs, lib, ... }:
 
 {
   home.username = "tks";
@@ -53,7 +53,7 @@
         file = "share/zsh-autosuggestions/zsh-autosuggestions.zsh";
       }
     ];
-    initExtraBeforeCompInit = ''
+    initContent = lib.mkOrder 550 ''
       fpath+="${pkgs.zsh-completions}/share/zsh/site-functions"
     '';
   };

@@ -12,11 +12,9 @@
     nix-flatpak.url = "github:gmodena/nix-flatpak";
   };
 
-  outputs = { self, nixpkgs, home-manager, nix-flatpak, ... }@inputs: {
-    nixosConfigurations.PCFix-nixos = nixpkgs.lib.nixosSystem {
-      system = "x86_64-linux";
-      specialArgs = { inherit inputs; };
-      modules = [
+  outputs = { self, nixpkgs, home-manager, nix-flatpak, ... }@inputs:
+    let
+      sharedModules = [
         ./configuration.nix
 
         home-manager.nixosModules.home-manager
@@ -32,6 +30,18 @@
 
         nix-flatpak.nixosModules.nix-flatpak
       ];
+    in
+    {
+      nixosConfigurations.PCFix-nixos = nixpkgs.lib.nixosSystem {
+        system = "x86_64-linux";
+        specialArgs = { inherit inputs; };
+        modules = [ ./hosts/PCFix-nixos/hardware-configuration.nix ] ++ sharedModules;
+      };
+
+      nixosConfigurations.Laptop-TKS = nixpkgs.lib.nixosSystem {
+        system = "x86_64-linux";
+        specialArgs = { inherit inputs; };
+        modules = [ ./hosts/Laptop-TKS/hardware-configuration.nix ] ++ sharedModules;
+      };
     };
-  };
 }
