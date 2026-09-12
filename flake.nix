@@ -35,13 +35,13 @@
       nixosConfigurations.PCFix-nixos = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
         specialArgs = { inherit inputs; };
-        modules = [ ./hosts/PCFix-nixos/hardware-configuration.nix ] ++ sharedModules;
+        modules = [ ./hosts/PCFix-nixos/hardware-configuration.nix ./hosts/PCFix-nixos/config.nix ] ++ sharedModules;
       };
 
       nixosConfigurations.Laptop-TKS = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
         specialArgs = { inherit inputs; };
-        modules = [ ./hosts/Laptop-TKS/hardware-configuration.nix ./hosts/Laptop-TKS/nvidia.nix ] ++ sharedModules;
+        modules = [ ./hosts/Laptop-TKS/hardware-configuration.nix ./hosts/Laptop-TKS/config.nix ] ++ sharedModules;
       };
     };
 }

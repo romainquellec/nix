@@ -4,7 +4,6 @@
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
-  networking.hostName = "PCFix-nixos";
   networking.networkmanager.enable = true;
 
   services.avahi = {

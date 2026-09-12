@@ -1,6 +1,8 @@
 { config, pkgs, ... }:
 
 {
+  networking.hostName = "Laptop-TKS";
+
   services.xserver.videoDrivers = [ "nvidia" ];
 
   hardware.graphics.enable = true;

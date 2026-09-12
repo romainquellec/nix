@@ -43,7 +43,7 @@
     };
     shellAliases = {
       update = "nix flake update --flake /home/tks/nixos-config";
-      rebuild = "sudo nixos-rebuild switch --flake /home/tks/nixos-config#PCFix-nixos";
+      rebuild = "sudo nixos-rebuild switch --flake /home/tks/nixos-config#$(hostname)";
       clean = "sudo nix-collect-garbage -d && nix-store --optimise";
     };
     plugins = [
