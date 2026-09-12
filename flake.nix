@@ -41,7 +41,7 @@
       nixosConfigurations.Laptop-TKS = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
         specialArgs = { inherit inputs; };
-        modules = [ ./hosts/Laptop-TKS/hardware-configuration.nix ] ++ sharedModules;
+        modules = [ ./hosts/Laptop-TKS/hardware-configuration.nix ./hosts/Laptop-TKS/nvidia.nix ] ++ sharedModules;
       };
     };
 }
