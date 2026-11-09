@@ -1,4 +1,4 @@
-{ config, pkgs, lib, ... }:
+{ config, pkgs, lib, inputs, ... }:
 
 {
   home.username = "tks";
@@ -6,6 +6,7 @@
   home.stateVersion = "24.11";
 
   home.packages = with pkgs; [
+    inputs.claude-desktop.packages.${pkgs.system}.claude-desktop
     android-tools
     brave
     calibre

@@ -10,6 +10,9 @@
     };
 
     nix-flatpak.url = "github:gmodena/nix-flatpak";
+
+    claude-desktop.url = "github:k3d3/claude-desktop-linux-flake";
+    claude-desktop.inputs.nixpkgs.follows = "nixpkgs";
   };
 
   outputs = { self, nixpkgs, home-manager, nix-flatpak, ... }@inputs:
@@ -23,6 +26,7 @@
             useGlobalPkgs = true;
             useUserPackages = true;
             backupFileExtension = "backup";
+            extraSpecialArgs = { inherit inputs; };
 
             users.tks = import ./modules/home.nix;
           };
