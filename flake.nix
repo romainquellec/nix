@@ -14,6 +14,10 @@
     # Repackage maintenu du .deb Linux officiel d'Anthropic (k3d3 n'est plus mis à jour)
     claude-desktop.url = "github:aaddrick/claude-desktop-debian";
     claude-desktop.inputs.nixpkgs.follows = "nixpkgs";
+
+    # Claude Code mis à jour quotidiennement (nixpkgs 25.11 est figé sur une vieille version)
+    claude-code.url = "github:sadjow/claude-code-nix";
+    claude-code.inputs.nixpkgs.follows = "nixpkgs";
   };
 
   outputs = { self, nixpkgs, home-manager, nix-flatpak, ... }@inputs:

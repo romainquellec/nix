@@ -10,7 +10,7 @@
     android-tools
     brave
     calibre
-    claude-code
+    inputs.claude-code.packages.${pkgs.stdenv.hostPlatform.system}.claude-code
     chromium
     discord
     firefox
