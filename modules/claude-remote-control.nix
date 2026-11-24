@@ -15,6 +15,7 @@ let
   folders = {
     nixos-config = "${home}/nixos-config";
     notes = "${home}/notes";
+    dev = "${home}/Dev";
   };
 
   # Outils dont Claude a besoin dans les sessions lancées par le service
