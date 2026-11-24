@@ -11,7 +11,8 @@
 
     nix-flatpak.url = "github:gmodena/nix-flatpak";
 
-    claude-desktop.url = "github:k3d3/claude-desktop-linux-flake";
+    # Repackage maintenu du .deb Linux officiel d'Anthropic (k3d3 n'est plus mis à jour)
+    claude-desktop.url = "github:aaddrick/claude-desktop-debian";
     claude-desktop.inputs.nixpkgs.follows = "nixpkgs";
   };
 
