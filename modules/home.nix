@@ -92,11 +92,11 @@
   programs.ssh = {
     enable = true;
     enableDefaultConfig = false;
-    matchBlocks = {
+    settings = {
       "github.com" = {
-        hostname = "github.com";
-        identityFile = "~/.ssh/gh";
-        user = "git";
+        HostName = "github.com";
+        IdentityFile = "~/.ssh/gh";
+        User = "git";
       };
     };
   };
