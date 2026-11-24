@@ -1,6 +1,8 @@
 { config, pkgs, lib, inputs, ... }:
 
 {
+  imports = [ ./claude-remote-control.nix ];
+
   home.username = "tks";
   home.homeDirectory = "/home/tks";
   home.stateVersion = "24.11";
