@@ -6,7 +6,7 @@
   home.stateVersion = "24.11";
 
   home.packages = with pkgs; [
-    inputs.claude-desktop.packages.${pkgs.system}.claude-desktop
+    inputs.claude-desktop.packages.${pkgs.stdenv.hostPlatform.system}.claude-desktop
     android-tools
     brave
     calibre
