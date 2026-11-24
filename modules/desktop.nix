@@ -39,7 +39,6 @@
     }];
     packages = [
       "com.opera.Opera"
-      "io.github.chidiwilliams.Buzz"
     ];
   };
 }
